@@ -1,4 +1,4 @@
-FROM        buildbot/buildbot-master:v2.10.1
+FROM        buildbot/buildbot-master:v3.1.1
 MAINTAINER  alicef@gentoo.org
 
 USER root
