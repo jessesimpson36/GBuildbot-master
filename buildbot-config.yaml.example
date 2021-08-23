@@ -1,0 +1,22 @@
+workers:
+  - name: worker0
+    pass: tobechanged
+    toolchains:
+      amd64:
+        clang: True
+        gcc: True
+      arm:
+        clang: True
+        gcc: True
+      arm64:
+        clang: True
+        gcc: True
+      ppc64:
+        clang: True
+        gcc: True
+      sparc:
+        clang: True
+        gcc: True
+    gentoo_sources: True
+    other_sources: True
+    eclass_change: True

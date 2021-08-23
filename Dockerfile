@@ -12,3 +12,4 @@ RUN pip3 --no-cache-dir install 'buildbot-tyrian-theme'
 RUN echo 'buildbot:x:1000:1000:Buildbot:/var/lib/buildbot:/sbin/nologin' >> /etc/passwd
 RUN chown -R buildbot /var/lib/buildbot
 USER buildbot
+COPY buildbot-config.yaml /var/lib/buildbot
