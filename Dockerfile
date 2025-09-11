@@ -1,4 +1,4 @@
-FROM        buildbot/buildbot-master:v3.5.0
+FROM        buildbot/buildbot-master:v4.3.0
 MAINTAINER  alicef@gentoo.org
 
 USER root
@@ -10,6 +10,8 @@ RUN /buildbot_venv/bin/pip3 --no-cache-dir install 'buildbot-tyrian-theme'
 # We cannot RUN useradd -d /var/lib/buildbot buildbot since useradd is not present
 # So let's create user ad hand
 RUN echo 'buildbot:x:1000:1000:Buildbot:/var/lib/buildbot:/sbin/nologin' >> /etc/passwd
+RUN mkdir -p /var/lib/buildbot
 RUN chown -R buildbot /var/lib/buildbot
+WORKDIR /var/lib/buildbot
 USER buildbot
 COPY buildbot-config.yaml /var/lib/buildbot
